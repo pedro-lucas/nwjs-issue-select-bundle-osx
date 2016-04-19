@@ -1,30 +1,15 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<script>
-      'use strict';
-      const fdialog = require('node-webkit-fdialogs');
-      const Dialog = new fdialog.FDialog({
-        type: 'open',
-        accept: ['.app'],
-        window: window,
-        path: '/Applications'
-      });
-
-      function showDialog() {
-        Dialog.getFilePath(function (err, stringPath) {
-          if(err) {
-            document.getElementById('message').innerHTML = err.toString();
-          }else{
-            document.getElementById('message').innerHTML = stringPath;
-          }
-        });
-      }
-
-    </script>
 	</head>
 	<body>
-    <button onclick="showDialog()">Select</button>
+		<input id="file" type="file" accept=".app" value="" nwworkingdir="/Applications" />
     <div>Path: <span id="message"></span></div>
+		<script>
+      'use strict';
+			document.getElementById('file').onchange = function(e) {
+				document.getElementById('message').innerHTML = this.value;
+			};
+    </script>
   </body>
 </html>

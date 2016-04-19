@@ -12,9 +12,6 @@
     "min_width": 400,
     "min_height": 400
   },
-  "dependencies": {
-    "node-webkit-fdialogs": "git+https://github.com/pedro-lucas/node-webkit-fdialogs.git#267bff6ecb72b63d64c2275ac21fb21c546ceb50"
-  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "nw-builder": "^2.2.0"
